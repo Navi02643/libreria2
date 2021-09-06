@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Libreria</a>
+    </nav>
+    <div class="container">
+      <div class="col-md mt-4 card">
+        <form action="/libreria" method="POST" class="card-body">
+          <h3 class="card-title text-center">Añadir libro</h3>
+          <br />
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="titulo"
+              placeholder="Titulo"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="descripcion"
+              placeholder="Descripcion"
+            />
+          </div>
+          <hr />
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary" />
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md mt-4 text-center">
+        <table class="table table-striped">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fecha de publicacion</th>
+          </tr>
+          <% for(var i = 0; i < libreria.length; i++) { %>
+          <tr>
+            <td><%= libreria[i].IDlibro %></td>
+            <td><%= libreria[i].titulo %></td>
+            <td><%= libreria[i].descripcion %></td>
+            <td><%= libreria[i].fecha %></td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
